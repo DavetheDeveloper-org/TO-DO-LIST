@@ -2,12 +2,13 @@ document.addEventListener('DOMContentLoaded', () =>{;
 const taskInput = document.getElementById('task-input');
 const addTaskBtn = document.getElementById('add-task-btn');
 const taskList = document.getElementById('task-list');
-const todosContainer = document.querySelector('todos-container')
+const todosContainer = document.querySelector('.todos-container')
 
 const toggleEmptyState = () => {
     todosContainer.style.width = taskList.children.length > 0 ? '100%' : '50%'
 };
 
+taskInput.value = ''; 
 const addTask= (event) => {
     event.preventDefault();
     const taskText= taskInput.value.trim();
@@ -32,11 +33,8 @@ const addTask= (event) => {
     li.querySelector('.delete-btn').addEventListener('click', () => {
     li.remove()
   })
-
-    taskList.appendChild(li);
-    if (taskInput.value = ''){
-        alert("OGA ENTER SOMETHING")
-    }
+  taskList.appendChild(li);
+  taskInput.value = '';
 };
 
     addTaskBtn.addEventListener('click', addTask);
