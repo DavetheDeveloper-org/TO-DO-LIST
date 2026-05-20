@@ -107,7 +107,7 @@ body{
 .task-buttons{
   display: flex;
   gap: 10px;
-  margin-right: auto;
+  margin-left: auto;
 }
 
 .task-buttons button{
